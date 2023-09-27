@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DIZ4VX_konferencianaptar>
+    <konferencia>
+        <cim>Bükki túra útvonalak</cim>
+        <hallgatok>
+            <hallgato>
+                <nev>Juhász Éva</nev>
+                <lakcim>3534. Miskolc, Árpád utca 4.</lakcim>
+            </hallgato>
+            <hallgato>
+                <nev>Nagy Sára</nev>
+                <lakcim>3534. Miskolc, Kuruc utca 10.</lakcim>
+            </hallgato>
+        </hallgatok>
+        <helyszin>Miskolci Galéria</helyszin>
+        <eloado>
+            <nev>Nagy Anna</nev>
+            <adoszam>123456789</adoszam>
+            <lakcim>3534. Miskolc, Köln utca 18.</lakcim>
+        </eloado>
+        <datum>2023.09.27.</datum>
+    </konferencia>
+</DIZ4VX_konferencianaptar>
