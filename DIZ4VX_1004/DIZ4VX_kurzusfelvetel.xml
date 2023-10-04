@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE kurzusfelvetel SYSTEM "DIZ4VX_kurzusfelvetel.dtd">
+<kurzusfelvetel>
+    <kurzus>
+        <kurzuskod>K123</kurzuskod>
+        <kurzusnev>Matematika I.</kurzusnev>
+    </kurzus>
+    <kurzus>
+        <kurzuskod>K456</kurzuskod>
+        <kurzusnev>Fizika II.</kurzusnev>
+    </kurzus>
+    <idopont>
+        <nap>Hétfő</nap>
+        <ora>10:00</ora>
+    </idopont>
+    <idopont>
+        <nap>Szerda</nap>
+        <ora>14:30</ora>
+    </idopont>
+    <oktato>Dr. Kovács Péter</oktato>
+    <jovahagyas>igen</jovahagyas>
+</kurzusfelvetel>

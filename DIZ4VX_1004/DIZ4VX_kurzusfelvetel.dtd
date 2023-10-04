@@ -1,0 +1,11 @@
+<!ELEMENT kurzusfelvetel (kurzus*, idopont+, (oktato|oraado)?, jovahagyas)>
+<!ELEMENT kurzus (kurzuskod, kurzusnev)>
+    <!ELEMENT kurzuskod (#PCDATA)>
+    <!ELEMENT kurzusnev (#PCDATA)>
+<!ELEMENT idopont (nap, ora)>
+    <!ELEMENT nap (#PCDATA)>
+    <!ELEMENT ora (#PCDATA)>
+<!ELEMENT oktato (#PCDATA)>
+<!ELEMENT oraado (#PCDATA)>
+<!ELEMENT jovahagyas (#PCDATA)>
+<!ATTLIST jovahagyas alapertelmezett (igen|nem) "nem">
