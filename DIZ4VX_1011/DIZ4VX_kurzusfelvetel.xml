@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DIZ4VX_kuruzfelvetel tanev="2023/2024_1" egyetem="ME" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+
+    <hallgato id="DIZ4VX">
+        <hnev>Dobai Attila</hnev>
+        <szulev>2001</szulev>
+        <szak evf="5">Mérnökinformatikus</szak>
+    </hallgato>
+
+    <kurzusok>
+        <kurzus id="G3BIW">
+            <kurzusnev>Szoftvertesztelés</kurzusnev>
+            <kredit>5</kredit>
+            <hely>Inf. 103</hely>
+            <idopont>Hétfő 10-12</idopont>
+            <oktato>Dr. Hornyák Olivér</oktato>
+        </kurzus>
+        <kurzus id="G3BIW" jovahagyas="igen">
+            <kurzusnev>Web technológiák 1</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXX. előadó</hely>
+            <idopont>Hétfő 14-16</idopont>
+            <oktato>Agárdi Anita</oktato>
+        </kurzus>
+        <kurzus id="G3BIW" nyelv="magyar">
+            <kurzusnev>Mesterséges intelligencia</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXXII. előadó</hely>
+            <idopont>Kedd 10-12</idopont>
+            <oktato>Kunné Dr. Tamás Judit</oktato>
+            <oraado>Fazekas Levente</oraado>
+        </kurzus>
+        <kurzus id="G3BIW" nyelv="magyar">
+            <kurzusnev>Mesterséges intelligencia</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXXII. előadó</hely>
+            <idopont>Kedd 10-12</idopont>
+            <oktato>Kunné Dr. Tamás Judit</oktato>
+            <oraado>Fazekas Levente</oraado>
+        </kurzus>
+    </kurzusok>
+</DIZ4VX_kuruzfelvetel>
