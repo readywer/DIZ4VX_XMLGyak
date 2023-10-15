@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DIZ4VX_kuruzfelvetel tanev="2023/2024_1" egyetem="ME" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+<DIZ4VX_kurzusfelvetel tanev="2023/2024/I" egyetem="ME"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="DIZ4VX_kurzusfelvetel.xsd">
 
     <hallgato id="DIZ4VX">
         <hnev>Dobai Attila</hnev>
@@ -8,35 +9,42 @@
     </hallgato>
 
     <kurzusok>
-        <kurzus id="G3BIW">
+        <kurzus id="GEIAL31H-B">
             <kurzusnev>Szoftvertesztelés</kurzusnev>
             <kredit>5</kredit>
             <hely>Inf. 103</hely>
             <idopont>Hétfő 10-12</idopont>
             <oktato>Dr. Hornyák Olivér</oktato>
         </kurzus>
-        <kurzus id="G3BIW" jovahagyas="igen">
+        <kurzus id="GEIAL331-B" jovahagyas="igen">
             <kurzusnev>Web technológiák 1</kurzusnev>
             <kredit>5</kredit>
             <hely>XXX. előadó</hely>
             <idopont>Hétfő 14-16</idopont>
             <oktato>Agárdi Anita</oktato>
         </kurzus>
-        <kurzus id="G3BIW" nyelv="magyar">
-            <kurzusnev>Mesterséges intelligencia</kurzusnev>
+        <kurzus id="GEIAL130-B" nyelv="magyar">
+            <kurzusnev>Mesterséges intelligencia alapok</kurzusnev>
             <kredit>5</kredit>
             <hely>XXXII. előadó</hely>
             <idopont>Kedd 10-12</idopont>
             <oktato>Kunné Dr. Tamás Judit</oktato>
             <oraado>Fazekas Levente</oraado>
         </kurzus>
-        <kurzus id="G3BIW" nyelv="magyar">
-            <kurzusnev>Mesterséges intelligencia</kurzusnev>
+        <kurzus id="GEIAL322-B">
+            <kurzusnev>Adatkezelés XML-ben</kurzusnev>
             <kredit>5</kredit>
             <hely>XXXII. előadó</hely>
-            <idopont>Kedd 10-12</idopont>
-            <oktato>Kunné Dr. Tamás Judit</oktato>
-            <oraado>Fazekas Levente</oraado>
+            <idopont>Kedd 12:00-14:00</idopont>
+            <oktato>Dr. Bednarik László</oktato>
+        </kurzus>
+        <kurzus id="GEIAL333-B">
+            <kurzusnev>Web-es alkalmazások (Java)</kurzusnev>
+            <kredit>5</kredit>
+            <hely>online</hely>
+            <idopont>Kedd 14:00-18:00</idopont>
+            <oktato>Dr. Barabás Péter</oktato>
+            <oraado>Selmeci Viktor</oraado>
         </kurzus>
     </kurzusok>
-</DIZ4VX_kuruzfelvetel>
+</DIZ4VX_kurzusfelvetel>
