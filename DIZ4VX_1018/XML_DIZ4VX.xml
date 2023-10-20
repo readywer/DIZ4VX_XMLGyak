@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Fesztivál_DIZ4VX xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchema_DIZ4VX.xsd">
-    <fesztivál feszkód="1">
+    <fesztivál Fesz_ID="1">
         <név>Strand Fesztivál</név>
         <helyszín>Zamádi</helyszín>
         <év>2023</év>
     </fesztivál>
-    <fesztivál feszkód="2">
+    <fesztivál Fesz_ID="2">
         <név>Kocsonyafesztivál</név>
         <helyszín>Miskolc</helyszín>
         <év>2023</év>
     </fesztivál>
 
-    <tulajdonos tkód="11" fesztivál="1">
+    <tulajdonos T_ID="11" Fesztivál="1">
         <név>Sziget Kulturális Menedzser Iroda Zártkörűen Működő Részvénytársaság</név>
         <adószám>12345678-8-69</adószám>
         <alapítás>2000</alapítás>
         <bevétel>46868000</bevétel>
     </tulajdonos>
-    <tulajdonos tkód="12" fesztivál="2">
+    <tulajdonos T_ID="12" Fesztivál="2">
         <név>Miskolc Város Önkormányzata</név>
-        <adószám>112345678-5-55</adószám>
+        <adószám>11234567-5-55</adószám>
         <alapítás>1990</alapítás>
         <bevétel>97476127</bevétel>
     </tulajdonos>
 
-    <fellépő felkód="21" fesztivál="1">
+    <fellépő Fel_ID="21" Fesztivál="1">
         <név>Ákos</név>
         <ország>Magyarország</ország>
         <díj>500000</díj>
     </fellépő>
-    <fellépő felkód="22" fesztivál="2">
+    <fellépő Fel_ID="22" Fesztivál="2">
         <név>Tiesto</név>
         <ország>Hollandia</ország>
         <díj>800000</díj>
     </fellépő>
 
-    <bár bkód="31" fesztivál="1">
+    <bár B_ID="31" Fesztivál="1">
         <név>Fit-Nes</név>
         <ital>vadász</ital>
         <ital>pálinka</ital>
@@ -44,7 +44,7 @@
         <ital>rum</ital>
         <cég>Vicc kft.</cég>
     </bár>
-    <bár bkód="32" fesztivál="2">
+    <bár B_ID="32" Fesztivál="2">
         <név>Korozó</név>
         <ital>sör</ital>
         <ital>bor</ital>
@@ -53,28 +53,28 @@
         <cég>Korozó kft.</cég>
     </bár>
 
-    <alkalmazott akód="41" munkahely="31">
+    <alkalmazott A_ID="41" Munkahely="31">
         <név>Farkas Cintia</név>
-        <muszak>8-20</muszak>
+        <műszak>8-20</műszak>
         <fizetés>200000</fizetés>
     </alkalmazott>
-    <alkalmazott akód="42" munkahely="32">
+    <alkalmazott A_ID="42" Munkahely="32">
         <név>Bukta Laura</név>
-        <muszak>20-4</muszak>
-        <muszak>8-12</muszak>
+        <műszak>20-4</műszak>
+        <műszak>8-12</műszak>
         <fizetés>300000</fizetés>
     </alkalmazott>
 
-    <résztvevő rkód="51" fesztivál="1">
+    <résztvevő R_ID="51" Fesztivál="1">
         <név>Badány gábor</név>
-        <diákigazolvány>123456789</diákigazolvány>
+        <diákigazolvány>12345678901</diákigazolvány>
         <lakcím>
             <település>Miskolc</település>
             <utca>Alma</utca>
             <házszám>10</házszám>
         </lakcím>
     </résztvevő>
-    <résztvevő rkód="52" fesztivál="2">
+    <résztvevő R_ID="52" Fesztivál="2">
         <név>Farkas Balázs</név>
         <lakcím>
             <település>Budapest</település>
@@ -83,19 +83,19 @@
         </lakcím>
     </résztvevő>
 
-    <nyelvtudás nykód="61">
+    <nyelvtudás Ny_ID="61">
         <nyelv>angol</nyelv>
         <szint>B2</szint>
     </nyelvtudás>
-    <nyelvtudás nykód="62">
+    <nyelvtudás Ny_ID="62">
         <nyelv>német</nyelv>
         <szint>B2</szint>
     </nyelvtudás>
 
-    <közvélemény kkód="71" megkérdezett="51" nyelvtudás="61">
+    <közvélemény K_ID="71" megkérdezett="51" nyelvtudás="61">
         <kérdező>Forgács Beatrix</kérdező>
     </közvélemény>
-    <közvélemény kkód="72" megkérdezett="52" nyelvtudás="62">
+    <közvélemény K_ID="72" megkérdezett="52" nyelvtudás="62">
         <kérdező>Forgács Beatrix</kérdező>
     </közvélemény>
 </Fesztivál_DIZ4VX>
