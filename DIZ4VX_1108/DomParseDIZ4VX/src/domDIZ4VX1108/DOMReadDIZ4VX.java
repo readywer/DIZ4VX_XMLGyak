@@ -1,6 +1,7 @@
 package domDIZ4VX1108;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -20,9 +21,6 @@ public class DOMReadDIZ4VX {
             // A dokumentum fastruktúrájának feldolgozása
             doc.getDocumentElement().normalize();
 
-            // Gyökérelem kiírása
-            System.out.println("Gyökérelem: " + doc.getDocumentElement().getNodeName());
-
             // A fa bejárása és kiírása
             printNode(doc.getDocumentElement(), "");
 
@@ -32,21 +30,38 @@ public class DOMReadDIZ4VX {
     }
 
     private static void printNode(Node node, String indent) {
-        if (node.getNodeType() == Node.ELEMENT_NODE) {
-            System.out.println(indent + node.getNodeName());
+        // Nyitó címke kiírása attribútumokkal
+        System.out.print(indent + "<" + node.getNodeName());
 
-            // Gyermek elemek bejárása
+        NamedNodeMap attributes = node.getAttributes();
+        for (int i = 0; i < attributes.getLength(); i++) {
+            Node attribute = attributes.item(i);
+            System.out.print(" " + attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
+        }
+
+        System.out.println(">");
+
+        // Szöveges tartalom kiírása, ha van
+        if (node.hasChildNodes()) {
             NodeList childNodes = node.getChildNodes();
             for (int i = 0; i < childNodes.getLength(); i++) {
                 Node childNode = childNodes.item(i);
-                printNode(childNode, indent + "  ");
-            }
-        } else if (node.getNodeType() == Node.TEXT_NODE) {
-            String text = node.getTextContent().trim();
-            if (!text.isEmpty()) {
-                System.out.println(indent + text);
+
+                if (childNode.getNodeType() == Node.ELEMENT_NODE) {
+                    // Rekurzív hívás a gyermek elemre
+                    printNode(childNode, indent + "  ");
+                } else if (childNode.getNodeType() == Node.TEXT_NODE) {
+                    // Szöveges tartalom kiírása
+                    String text = childNode.getTextContent().trim();
+                    if (!text.isEmpty()) {
+                        System.out.println(indent + "  " + text);
+                    }
+                }
             }
         }
+
+        // Záró címke kiírása
+        System.out.println(indent + "</" + node.getNodeName() + ">");
     }
 }
 
