@@ -1,0 +1,9 @@
+Element: ora
+  Element: targy
+  Element: idopont
+    Element: nap
+    Element: tol
+    Element: ig
+  Element: helyszin
+  Element: oktato
+  Element: szak
