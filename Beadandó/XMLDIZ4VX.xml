@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Számítógépbolt xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+    <Fiók FID="">
+        <Felhasználónév></Felhasználónév>
+        <Jelszó></Jelszó>
+        <Kedvezmény></Kedvezmény>
+    </Fiók>
+
+    <Vásárló VID="" Fiók="">
+        <Név></Név>
+        <Cím>
+            <Város></Város>
+            <Irányítószám></Irányítószám>
+            <Utca_házszám></Utca_házszám>
+        </Cím>
+        <Telefonszám></Telefonszám>
+    </Vásárló>
+
+    <Bankkártya BID="">
+        <Bank></Bank>
+        <Kártyaszám></Kártyaszám>
+        <Lejárati_dátum></Lejárati_dátum>
+    </Bankkártya>
+
+    <Számítógép SZID="">
+        <Név></Név>
+        <Ár></Ár>
+        <Darab></Darab>
+    </Számítógép>
+
+    <Alkatrész AID="">
+        <Név></Név>
+        <Ár></Ár>
+        <Tipus></Tipus>
+    </Alkatrész>
+
+    <Fizetés fiók="" bankkártya="">
+        <Jóváhagyás></Jóváhagyás>    
+    </Fizetés>
+
+    <Vásárlás fiók="" számítógép="">
+        <Dátum></Dátum>    
+    </Vásárlás>
+
+    <Összeszerelés számítógép="" alkatrész="">
+        <Darab></Darab>
+    </Összeszerelés>
+    
+</Számítógépbolt>
