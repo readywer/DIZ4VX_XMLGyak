@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Felhasználónév" type="xs:string" />
+    <xs:element name="Jelszó" type="xs:string" />
+    <xs:element name="Kedvezmény" type="xs:int" />
+    <xs:element name="Név" type="xs:string" />
+    <xs:element name="Telefonszám" type="xs:string" />
+    <xs:element name="Bank" type="xs:string" />
+    <xs:element name="Kártyaszám" type="kártyaszámTípus" />
+    <xs:element name="Lejárati_dátum" type="dátumTípus" />
+    <xs:element name="Ár" type="xs:int" />
+    <xs:element name="Darab" type="xs:int" />
+    <xs:element name="Tipus" type="xs:string" />
+    <xs:element name="Jóváhagyás" type="xs:string" />
+    <xs:element name="Dátum" type="dátumTípus" />
+
+    <xs:simpleType name="irányítószámTípus">
+        <xs:restriction base="xs:int">
+            <xs:pattern value="(\d{4})" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="kártyaszámTípus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\d{4})-(\d{4})-(\d{4})-(\d{4})" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dátumTípus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\d{4})-(\d{2})-(\d{2})" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="fiókTípus">
+        <xs:sequence>
+            <xs:element ref="Felhasználónév" />
+            <xs:element ref="Jelszó" />
+            <xs:element ref="Kedvezmény" />
+        </xs:sequence>
+        <xs:attribute name="FID" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="vásárlóTípus">
+        <xs:sequence>
+            <xs:element ref="Név" />
+            <xs:element name="Cím">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Város" type="xs:string" />
+                        <xs:element name="Irányítószám" type="irányítószámTípus" />
+                        <xs:element name="Utca_házszám" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element ref="Telefonszám" />
+        </xs:sequence>
+        <xs:attribute name="VID" type="xs:integer" use="required" />
+        <xs:attribute name="Fiók" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="bankkártyaTípus">
+        <xs:sequence>
+            <xs:element ref="Bank" />
+            <xs:element ref="Kártyaszám" />
+            <xs:element ref="Lejárati_dátum" />
+        </xs:sequence>
+        <xs:attribute name="BID" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="számítógépTípus">
+        <xs:sequence>
+            <xs:element ref="Név" />
+            <xs:element ref="Ár" />
+            <xs:element ref="Darab" />
+        </xs:sequence>
+        <xs:attribute name="SZID" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="alkatrészTípus">
+        <xs:sequence>
+            <xs:element ref="Név" />
+            <xs:element ref="Ár" />
+            <xs:element ref="Tipus" />
+        </xs:sequence>
+        <xs:attribute name="AID" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="fizetésTípus">
+        <xs:sequence>
+            <xs:element ref="Jóváhagyás" />
+        </xs:sequence>
+        <xs:attribute name="fiók" type="xs:integer" use="required" />
+        <xs:attribute name="bankkártya" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="vásárlásTípus">
+        <xs:sequence>
+            <xs:element ref="Dátum" />
+        </xs:sequence>
+        <xs:attribute name="fiók" type="xs:integer" use="required" />
+        <xs:attribute name="számítógép" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="összeszerelésTípus">
+        <xs:sequence>
+            <xs:element ref="Darab" />
+        </xs:sequence>
+        <xs:attribute name="számítógép" type="xs:integer" use="required" />
+        <xs:attribute name="alkatrész" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:element name="Számítógépbolt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Fiók" type="fiókTípus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Vásárló" type="vásárlóTípus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Bankkártya" type="bankkártyaTípus" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="Számítógép" type="számítógépTípus" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="Alkatrész" type="alkatrészTípus" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="Fizetés" type="fizetésTípus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Vásárlás" type="vásárlásTípus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Összeszerelés" type="összeszerelésTípus" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:key name="fiók_kulcs">
+            <xs:selector xpath="Fiók" />
+            <xs:field xpath="@FID" />
+        </xs:key>
+        <xs:key name="vásárló_kulcs">
+            <xs:selector xpath="Vásárló" />
+            <xs:field xpath="@VID" />
+        </xs:key>
+        <xs:key name="bankkártya_kulcs">
+            <xs:selector xpath="Bankkártya" />
+            <xs:field xpath="@BID" />
+        </xs:key>
+        <xs:key name="számítógép_kulcs">
+            <xs:selector xpath="Számítógép" />
+            <xs:field xpath="@SZID" />
+        </xs:key>
+        <xs:key name="alkatrész_kulcs">
+            <xs:selector xpath="Alkatrész" />
+            <xs:field xpath="@AID" />
+        </xs:key>
+
+        <xs:keyref name="fiók_vásárló_kulcs" refer="fiók_kulcs">
+            <xs:selector xpath="Vásárló" />
+            <xs:field xpath="@fiók" />
+        </xs:keyref>
+        <xs:keyref name="fiók_fizetés_kulcs" refer="fiók_kulcs">
+            <xs:selector xpath="Fizetés" />
+            <xs:field xpath="@fiók" />
+        </xs:keyref>
+        <xs:keyref name="bankkártya_fizetés_kulcs" refer="bankkártya_kulcs">
+            <xs:selector xpath="Bankkártya" />
+            <xs:field xpath="@bankkártya" />
+        </xs:keyref>
+        <xs:keyref name="fiók_vásárlás_kulcs" refer="fiók_kulcs">
+            <xs:selector xpath="Fiók" />
+            <xs:field xpath="@fiók" />
+        </xs:keyref>
+        <xs:keyref name="számítógép_vásárlás_kulcs" refer="számítógép_kulcs">
+            <xs:selector xpath="Számítógép" />
+            <xs:field xpath="@számítógép" />
+        </xs:keyref>
+        <xs:keyref name="összeszerelés_számítógép_kulcs" refer="számítógép_kulcs">
+            <xs:selector xpath="Számítógép" />
+            <xs:field xpath="@számítógép" />
+        </xs:keyref>
+        <xs:keyref name="alkatrész_összeszerelés_kulcs" refer="alkatrész_kulcs">
+            <xs:selector xpath="Alkatrész" />
+            <xs:field xpath="@alkatrész" />
+        </xs:keyref>
+
+    </xs:element>
+
+</xs:schema>
