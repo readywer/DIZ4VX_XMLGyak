@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Számítógépbolt xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchemaDIZ4VX.xsd">
+        
+    <!-- Első Fiók -->
+        
+    <Fiók FID="1">
+                
+        <Felhasználónév>user1</Felhasználónév>
+                
+        <Jelszó>newPassword1</Jelszó>
+                
+        <Kedvezmény>10</Kedvezmény>
+            
+    </Fiók>
+        
+    <!-- Második Fiók -->
+        
+    <Fiók FID="2">
+                
+        <Felhasználónév>user2</Felhasználónév>
+                
+        <Jelszó>newPassword2</Jelszó>
+                
+        <Kedvezmény>15</Kedvezmény>
+            
+    </Fiók>
+        
+    <!-- Harmadik Fiók -->
+        
+    <Fiók FID="3">
+                
+        <Felhasználónév>user3</Felhasználónév>
+                
+        <Jelszó>newPassword3</Jelszó>
+                
+        <Kedvezmény>20</Kedvezmény>
+            
+    </Fiók>
+        
+    <!-- Első Vásárló -->
+        
+    <Vásárló Fiók="1" VID="101">
+                
+        <Név>John Doe</Név>
+                
+        <Cím>
+                        
+            <Város>Budapest</Város>
+                        
+            <Irányítószám>1111</Irányítószám>
+                        
+            <Utca_házszám>Main Street 123</Utca_házszám>
+                    
+        </Cím>
+                
+        <Telefonszám>+36 30 123 4567</Telefonszám>
+            
+    </Vásárló>
+        
+    <!-- Második Vásárló -->
+        
+    <Vásárló Fiók="2" VID="102">
+                
+        <Név>Jane Doe</Név>
+                
+        <Cím>
+                        
+            <Város>Pécs</Város>
+                        
+            <Irányítószám>2222</Irányítószám>
+                        
+            <Utca_házszám>Second Street 456</Utca_házszám>
+                    
+        </Cím>
+                
+        <Telefonszám>+36 30 987 6543</Telefonszám>
+            
+    </Vásárló>
+        
+    <!-- Harmadik Vásárló -->
+        
+    <Vásárló Fiók="3" VID="103">
+                
+        <Név>Bob Smith</Név>
+                
+        <Cím>
+                        
+            <Város>Szeged</Város>
+                        
+            <Irányítószám>3333</Irányítószám>
+                        
+            <Utca_házszám>Third Street 789</Utca_házszám>
+                    
+        </Cím>
+                
+        <Telefonszám>+36 30 555 1234</Telefonszám>
+            
+    </Vásárló>
+        
+    <!-- Első Bankkártya -->
+        
+    <Bankkártya BID="201">
+                
+        <Bank>Bank of XYZ</Bank>
+                
+        <Kártyaszám>1234-5678-9012-3456</Kártyaszám>
+                
+        <Lejárati_dátum>2025-12-31</Lejárati_dátum>
+            
+    </Bankkártya>
+        
+    <!-- Második Bankkártya -->
+        
+    <Bankkártya BID="202">
+                
+        <Bank>Another Bank</Bank>
+                
+        <Kártyaszám>9876-5432-1098-7654</Kártyaszám>
+                
+        <Lejárati_dátum>2024-08-15</Lejárati_dátum>
+            
+    </Bankkártya>
+        
+    <!-- Harmadik Bankkártya -->
+        
+    <Bankkártya BID="203">
+                
+        <Bank>Bank XYZ Again</Bank>
+                
+        <Kártyaszám>1111-2222-3333-4444</Kártyaszám>
+                
+        <Lejárati_dátum>2023-05-20</Lejárati_dátum>
+            
+    </Bankkártya>
+        
+    <!-- Első Számítógép -->
+        
+    <Számítógép SZID="301">
+                
+        <Név>Gamer PC</Név>
+                
+        <Ár>1500</Ár>
+                
+        <Darab>2</Darab>
+            
+    </Számítógép>
+        
+    <!-- Második Számítógép -->
+        
+    <Számítógép SZID="302">
+                
+        <Név>Office PC</Név>
+                
+        <Ár>800</Ár>
+                
+        <Darab>50</Darab>
+            
+    </Számítógép>
+        
+    <!-- Harmadik Számítógép -->
+        
+    <Számítógép SZID="303">
+                
+        <Név>Developer PC</Név>
+                
+        <Ár>1200</Ár>
+                
+        <Darab>5</Darab>
+            
+    </Számítógép>
+        
+    <!-- Első Alkatrész -->
+        
+    <Alkatrész AID="401">
+                
+        <Név>RAM modul</Név>
+                
+        <Ár>100</Ár>
+                
+        <Tipus>DDR4</Tipus>
+            
+    </Alkatrész>
+        
+    <!-- Második Alkatrész -->
+        
+    <Alkatrész AID="402">
+                
+        <Név>SSD meghajtó</Név>
+                
+        <Ár>120</Ár>
+                
+        <Tipus>SATA</Tipus>
+            
+    </Alkatrész>
+        
+    <!-- Harmadik Alkatrész -->
+        
+    <Alkatrész AID="403">
+                
+        <Név>Videokártya</Név>
+                
+        <Ár>300</Ár>
+                
+        <Tipus>GPU</Tipus>
+            
+    </Alkatrész>
+        
+    <!-- Első Fizetés -->
+        
+    <Fizetés bankkártya="201" fiók="1">
+                
+        <Jóváhagyás>Igen</Jóváhagyás>
+            
+    </Fizetés>
+        
+    <!-- Második Fizetés -->
+        
+    <Fizetés bankkártya="202" fiók="2">
+                
+        <Jóváhagyás>Nem</Jóváhagyás>
+            
+    </Fizetés>
+        
+    <!-- Harmadik Fizetés -->
+        
+    <Fizetés bankkártya="203" fiók="3">
+                
+        <Jóváhagyás>Igen</Jóváhagyás>
+            
+    </Fizetés>
+        
+    <!-- Első Vásárlás -->
+        
+    <Vásárlás fiók="1" számítógép="301">
+                
+        <Dátum>2023-11-18</Dátum>
+            
+    </Vásárlás>
+        
+    <!-- Második Vásárlás -->
+        
+    <Vásárlás fiók="2" számítógép="302">
+                
+        <Dátum>2023-11-19</Dátum>
+            
+    </Vásárlás>
+        
+    <!-- Harmadik Vásárlás -->
+        
+    <Vásárlás fiók="3" számítógép="303">
+                
+        <Dátum>2023-11-20</Dátum>
+            
+    </Vásárlás>
+        
+    <!-- Első Összeszerelés -->
+        
+    <Összeszerelés alkatrész="401" számítógép="301">
+                
+        <Darab>2</Darab>
+            
+    </Összeszerelés>
+        
+    <!-- Második Összeszerelés -->
+        
+    <Összeszerelés alkatrész="402" számítógép="302">
+                
+        <Darab>1</Darab>
+            
+    </Összeszerelés>
+        
+    <!-- Harmadik Összeszerelés -->
+        
+    <Összeszerelés alkatrész="403" számítógép="303">
+                
+        <Darab>3</Darab>
+            
+    </Összeszerelés>
+    
+</Számítógépbolt>

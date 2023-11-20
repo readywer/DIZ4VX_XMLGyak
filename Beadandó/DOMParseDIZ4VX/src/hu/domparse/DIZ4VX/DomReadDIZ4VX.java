@@ -29,7 +29,7 @@ public class DomReadDIZ4VX {
             listNodes(doc.getDocumentElement(), "");
 
             // Az új XML-fájl elkészítése
-            File outputFile = new File("XMLDIZ4VXwrite.xml");
+            File outputFile = new File("XMLDIZ4VX1.xml");
             writeXML(doc, outputFile);
 
             System.out.println("A XMLDIZ4VX.xml fájl elkészült.");
@@ -39,7 +39,7 @@ public class DomReadDIZ4VX {
     }
 
     // Rekurzív módon kilistázza a dokumentum fastruktúráját
-    private static void listNodes(Node node, String indent) {
+    public static void listNodes(Node node, String indent) {
         // Nyitó címke kiírása attribútumokkal
         System.out.print(indent + "<" + node.getNodeName());
 
@@ -75,14 +75,14 @@ public class DomReadDIZ4VX {
     }
 
     // XML dokumentum beolvasása
-    private static Document parseXML(File file) throws Exception {
+    public static Document parseXML(File file) throws Exception {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         return dBuilder.parse(file);
     }
 
     // XML dokumentum kiírása fájlba strukturált formában
-    private static void writeXML(Document doc, File file) throws Exception {
+    public static void writeXML(Document doc, File file) throws Exception {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         Properties outputProperties = new Properties();
