@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Fiók FID="1">
+    <Felhasználónév>user1</Felhasználónév>
+    <Jelszó>password1</Jelszó>
+    <Kedvezmény>10</Kedvezmény>
+</Fiók>
