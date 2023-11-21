@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <!-- Az entitások leírása -->
+    
+    <!-- Felhasználó adatai -->
     <xs:element name="Felhasználónév" type="xs:string" />
     <xs:element name="Jelszó" type="xs:string" />
     <xs:element name="Kedvezmény" type="xs:int" />
+
+    <!-- Vásárló adatai -->
     <xs:element name="Név" type="xs:string" />
     <xs:element name="Telefonszám" type="xs:string" />
     <xs:element name="Bank" type="xs:string" />
     <xs:element name="Kártyaszám" type="kártyaszámTípus" />
     <xs:element name="Lejárati_dátum" type="dátumTípus" />
+
+    <!-- Termék adatai -->
     <xs:element name="Ár" type="xs:int" />
     <xs:element name="Darab" type="xs:int" />
     <xs:element name="Tipus" type="xs:string" />
+
+    <!-- Egyéb adatok -->
     <xs:element name="Jóváhagyás" type="xs:string" />
     <xs:element name="Dátum" type="dátumTípus" />
 
+    <!-- A speciális típusok definiálása -->
     <xs:simpleType name="irányítószámTípus">
         <xs:restriction base="xs:int">
             <xs:pattern value="(\d{4})" />
@@ -33,6 +43,7 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- A komplex típusok definiálása -->
     <xs:complexType name="fiókTípus">
         <xs:sequence>
             <xs:element ref="Felhasználónév" />
@@ -111,6 +122,7 @@
         <xs:attribute name="alkatrész" type="xs:integer" use="required" />
     </xs:complexType>
 
+     <!-- A Számítógépbolt fő entitása -->
     <xs:element name="Számítógépbolt">
         <xs:complexType>
             <xs:sequence>
@@ -129,6 +141,7 @@
             </xs:sequence>
         </xs:complexType>
 
+        <!-- Kulcsok és kulcsreferenciák definiálása -->
         <xs:key name="fiók_kulcs">
             <xs:selector xpath="Fiók" />
             <xs:field xpath="@FID" />
