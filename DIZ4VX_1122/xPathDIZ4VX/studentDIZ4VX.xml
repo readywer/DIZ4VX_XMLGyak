@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<class xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        xs:noNamespaceSchemaLocation="studentDIZ4VX.xsd">
+    <student id="1">
+        <keresztnev>Krisztián</keresztnev>
+        <vezeteknev>Jonathán</vezeteknev>
+        <becenev>JK</becenev>
+        <kor>20</kor>
+    </student>
+
+    <student id="2">
+        <keresztnev>Jane</keresztnev>
+        <vezeteknev>Smith</vezeteknev>
+        <becenev>JS</becenev>
+        <kor>22</kor>
+    </student>
+
+    <student id="3">
+        <keresztnev>Michael</keresztnev>
+        <vezeteknev>Jordan</vezeteknev>
+        <becenev>His Airness</becenev>
+        <kor>58</kor>
+    </student>
+</class>

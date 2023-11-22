@@ -1,0 +1,6 @@
+Doc elkészítése,
+ <Darab>
+      2
+    </Darab>
+
+pl ezek egy sorban legyenek.
