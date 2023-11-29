@@ -54,6 +54,31 @@ public class xPathDIZ4VX {
             System.out.println("\n7) Az első két student elem, ami a class root element gyermekei: ");
             printNodeList(firstTwoStudents);
 
+            // 8) Válassza ki class root element összes gyermek elemét!
+            NodeList classChildren = (NodeList) xpath.compile("/class/*").evaluate(doc, javax.xml.xpath.XPathConstants.NODESET);
+            System.out.println("\n8) Class root element összes gyermek eleme: ");
+            printNodeList(classChildren);
+
+            // 9) Válassza ki az összes student elemet, amely rendelkezik legalább egy bármilyen attribútummal!
+            NodeList studentsWithAttributes = (NodeList) xpath.compile("//student[@*]").evaluate(doc, javax.xml.xpath.XPathConstants.NODESET);
+            System.out.println("\n9) Összes student elem, amely rendelkezik legalább egy attribútummal: ");
+            printNodeList(studentsWithAttributes);
+
+            // 10) Válassza ki a dokumentum összes elemét!
+            NodeList allElements = (NodeList) xpath.compile("//*").evaluate(doc, javax.xml.xpath.XPathConstants.NODESET);
+            System.out.println("\n10) Dokumentum összes eleme: ");
+            printNodeList(allElements);
+
+            // 11) Válassza ki a class root element összes student elemét, amelynél a kor>20!
+            NodeList studentsOver20 = (NodeList) xpath.compile("/class/student[kor > 20]").evaluate(doc, javax.xml.xpath.XPathConstants.NODESET);
+            System.out.println("\n11) Class root element összes student eleme, ahol a kor>20: ");
+            printNodeList(studentsOver20);
+
+            // 12) Válassza ki az összes student elem összes keresztnev or vezeteknev csomópontot!
+            NodeList allFirstNamesAndLastNames = (NodeList) xpath.compile("//student/keresztnev | //student/vezeteknev").evaluate(doc, javax.xml.xpath.XPathConstants.NODESET);
+            System.out.println("\n12) Összes student elem összes keresztnev és vezeteknev csomópontja: ");
+            printNodeList(allFirstNamesAndLastNames);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

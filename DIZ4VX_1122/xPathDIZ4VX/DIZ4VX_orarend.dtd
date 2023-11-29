@@ -1,0 +1,12 @@
+<!ELEMENT DIZ4VX_orarend (ora)*>
+<!ATTLIST DIZ4VX_orarend xmlns:xs CDATA #REQUIRED xs:noNamespaceSchemaLocation CDATA #REQUIRED>
+<!ELEMENT ora (targy,idopont,helyszin,oktato,szak)*>
+<!ATTLIST ora id CDATA #REQUIRED tipus CDATA #REQUIRED>
+<!ELEMENT targy (#PCDATA)>
+<!ELEMENT idopont (nap,tol,ig)>
+    <!ELEMENT nap (#PCDATA)>
+    <!ELEMENT tol (#PCDATA)>
+    <!ELEMENT ig (#PCDATA)>
+<!ELEMENT helyszin (#PCDATA)>
+<!ELEMENT oktato (#PCDATA)>
+<!ELEMENT szak (#PCDATA)>
