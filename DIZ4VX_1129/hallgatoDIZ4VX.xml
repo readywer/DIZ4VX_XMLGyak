@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<class xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+    <student id="01">
+        <keresztnev>Dobai</keresztnev>
+        <vezeteknev>Attila</vezeteknev>
+        <becenev>Tücsi</becenev>
+        <kor>22</kor>
+		<osztondij>0</osztondij>
+    </student>
+
+    <student id="02">
+        <keresztnev>Kek</keresztnev>
+        <vezeteknev>Dora</vezeteknev>
+        <becenev>Dorka</becenev>
+        <kor>20</kor>
+		<osztondij>520000</osztondij>
+    </student>
+
+    <student id="03">
+        <keresztnev>Zsoldos</keresztnev>
+        <vezeteknev>Andrea</vezeteknev>
+        <becenev>Andi</becenev>
+        <kor>18</kor>
+		<osztondij>450000</osztondij>
+    </student>
+</class>
