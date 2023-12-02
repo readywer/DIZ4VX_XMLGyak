@@ -49,29 +49,43 @@ public class DomReadDIZ4VX {
             System.out.print(" " + attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
         }
 
-        System.out.println(">");
-
         // Szöveges tartalom kiírása, ha van
         if (node.hasChildNodes()) {
             NodeList childNodes = node.getChildNodes();
-            for (int i = 0; i < childNodes.getLength(); i++) {
-                Node childNode = childNodes.item(i);
 
-                if (childNode.getNodeType() == Node.ELEMENT_NODE) {
-                    // Rekurzív hívás a gyermek elemre
-                    listNodes(childNode, indent + "  ");
-                } else if (childNode.getNodeType() == Node.TEXT_NODE) {
-                    // Szöveges tartalom kiírása
-                    String text = childNode.getTextContent().trim();
-                    if (!text.isEmpty()) {
-                        System.out.println(indent + "  " + text);
-                    }
+            // Ellenőrizze, hogy a gyermek elemek között van-e ELEMENT_NODE
+            boolean hasElementChild = false;
+            for (int i = 0; i < childNodes.getLength(); i++) {
+                if (childNodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
+                    hasElementChild = true;
+                    break;
                 }
             }
-        }
 
-        // Záró címke kiírása
-        System.out.println(indent + "</" + node.getNodeName() + ">");
+            if (hasElementChild) {
+                System.out.println(">");
+                // Rekurzív hívás a gyermek elemekre
+                for (int i = 0; i < childNodes.getLength(); i++) {
+                    Node childNode = childNodes.item(i);
+
+                    if (childNode.getNodeType() == Node.ELEMENT_NODE) {
+                        listNodes(childNode, indent + "  ");
+                    }
+                }
+                System.out.println(indent + "</" + node.getNodeName() + ">");
+            } else {
+                // Ha nincs más gyermek elem, akkor kiírja a szöveget és a záró címkét
+                String text = node.getTextContent().trim();
+                if (!text.isEmpty()) {
+                    System.out.println(">" + text + "</" + node.getNodeName() + ">");
+                } else {
+                    System.out.println("/>");
+                }
+            }
+        } else {
+            // Ha nincs gyermek eleme, záró címke zárással fejezzük be
+            System.out.println("/>");
+        }
     }
 
     // XML dokumentum beolvasása
