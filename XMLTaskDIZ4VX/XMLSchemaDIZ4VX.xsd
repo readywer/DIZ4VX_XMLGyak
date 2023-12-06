@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <!-- Az entitások leírása -->
-    
+
     <!-- Felhasználó adatai -->
     <xs:element name="Felhasználónév" type="xs:string" />
     <xs:element name="Jelszó" type="xs:string" />
@@ -65,7 +65,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element ref="Telefonszám" />
+            <xs:element ref="Telefonszám" minOccurs="1" maxOccurs="3"/>
         </xs:sequence>
         <xs:attribute name="VID" type="xs:integer" use="required" />
         <xs:attribute name="Fiók" type="xs:integer" use="required" />
@@ -122,7 +122,7 @@
         <xs:attribute name="alkatrész" type="xs:integer" use="required" />
     </xs:complexType>
 
-     <!-- A Számítógépbolt fő entitása -->
+    <!-- A Számítógépbolt fő entitása -->
     <xs:element name="Számítógépbolt">
         <xs:complexType>
             <xs:sequence>
@@ -163,10 +163,7 @@
             <xs:field xpath="@AID" />
         </xs:key>
 
-        <xs:keyref name="fiók_vásárló_kulcs" refer="fiók_kulcs">
-            <xs:selector xpath="Vásárló" />
-            <xs:field xpath="@fiók" />
-        </xs:keyref>
+        <!-- Idegen kulcsok -->
         <xs:keyref name="fiók_fizetés_kulcs" refer="fiók_kulcs">
             <xs:selector xpath="Fizetés" />
             <xs:field xpath="@fiók" />
@@ -191,6 +188,12 @@
             <xs:selector xpath="Alkatrész" />
             <xs:field xpath="@alkatrész" />
         </xs:keyref>
+
+        <!-- Az 1:1 kapcsolat megvalósítása -->
+        <xs:unique name="Vásárló_fiók_1_1">
+            <xs:selector xpath="Vásárló" />
+            <xs:field xpath="@fiók" />
+        </xs:unique>
 
     </xs:element>
 
