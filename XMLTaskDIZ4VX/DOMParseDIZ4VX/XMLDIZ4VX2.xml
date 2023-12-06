@@ -1,6 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Fiók FID="1">
-    <Felhasználónév>user1</Felhasználónév>
-    <Jelszó>password1</Jelszó>
-    <Kedvezmény>10</Kedvezmény>
-</Fiók>
+<Számítógépbolt xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchemaDIZ4VX.xsd">
+    <Fiók FID="1">
+        <Felhasználónév>user1</Felhasználónév>
+        <Jelszó>password1</Jelszó>
+        <Kedvezmény>10</Kedvezmény>
+    </Fiók>
+    <Fiók FID="2">
+        <Felhasználónév>user2</Felhasználónév>
+        <Jelszó>password2</Jelszó>
+        <Kedvezmény>15</Kedvezmény>
+    </Fiók>
+    <Fiók FID="3">
+        <Felhasználónév>user3</Felhasználónév>
+        <Jelszó>password3</Jelszó>
+        <Kedvezmény>20</Kedvezmény>
+    </Fiók>
+    <Vásárló Fiók="1" VID="101">
+        <Név>John Doe</Név>
+        <Cím>
+            <Város>Budapest</Város>
+            <Irányítószám>1111</Irányítószám>
+            <Utca_házszám>Main Street 123</Utca_házszám>
+        </Cím>
+        <Telefonszám>+36 30 123 4567</Telefonszám>
+        <Telefonszám>+36 30 123 4568</Telefonszám>
+    </Vásárló>
+    <Vásárló Fiók="2" VID="102">
+        <Név>Jane Doe</Név>
+        <Cím>
+            <Város>Pécs</Város>
+            <Irányítószám>2222</Irányítószám>
+            <Utca_házszám>Second Street 456</Utca_házszám>
+        </Cím>
+        <Telefonszám>+36 30 987 6543</Telefonszám>
+    </Vásárló>
+    <Vásárló Fiók="3" VID="103">
+        <Név>Bob Smith</Név>
+        <Cím>
+            <Város>Szeged</Város>
+            <Irányítószám>3333</Irányítószám>
+            <Utca_házszám>Third Street 789</Utca_házszám>
+        </Cím>
+        <Telefonszám>+36 30 555 1234</Telefonszám>
+        <Telefonszám>+36 30 555 1235</Telefonszám>
+        <Telefonszám>+36 30 555 1236</Telefonszám>
+    </Vásárló>
+    <Bankkártya BID="201">
+        <Bank>Bank of XYZ</Bank>
+        <Kártyaszám>1234-5678-9012-3456</Kártyaszám>
+        <Lejárati_dátum>2025-12-31</Lejárati_dátum>
+    </Bankkártya>
+    <Bankkártya BID="202">
+        <Bank>Another Bank</Bank>
+        <Kártyaszám>9876-5432-1098-7654</Kártyaszám>
+        <Lejárati_dátum>2024-08-15</Lejárati_dátum>
+    </Bankkártya>
+    <Bankkártya BID="203">
+        <Bank>Bank XYZ Again</Bank>
+        <Kártyaszám>1111-2222-3333-4444</Kártyaszám>
+        <Lejárati_dátum>2023-05-20</Lejárati_dátum>
+    </Bankkártya>
+    <Számítógép SZID="301">
+        <Név>Gamer PC</Név>
+        <Ár>1500</Ár>
+        <Darab>2</Darab>
+    </Számítógép>
+    <Számítógép SZID="302">
+        <Név>Office PC</Név>
+        <Ár>800</Ár>
+        <Darab>1</Darab>
+    </Számítógép>
+    <Számítógép SZID="303">
+        <Név>Developer PC</Név>
+        <Ár>1200</Ár>
+        <Darab>3</Darab>
+    </Számítógép>
+    <Alkatrész AID="401">
+        <Név>RAM modul</Név>
+        <Ár>100</Ár>
+        <Tipus>DDR4</Tipus>
+    </Alkatrész>
+    <Alkatrész AID="402">
+        <Név>SSD meghajtó</Név>
+        <Ár>120</Ár>
+        <Tipus>SATA</Tipus>
+    </Alkatrész>
+    <Alkatrész AID="403">
+        <Név>Videokártya</Név>
+        <Ár>300</Ár>
+        <Tipus>GPU</Tipus>
+    </Alkatrész>
+    <Fizetés bankkártya="201" fiók="1">
+        <Jóváhagyás>Igen</Jóváhagyás>
+    </Fizetés>
+    <Fizetés bankkártya="202" fiók="2">
+        <Jóváhagyás>Nem</Jóváhagyás>
+    </Fizetés>
+    <Fizetés bankkártya="203" fiók="3">
+        <Jóváhagyás>Igen</Jóváhagyás>
+    </Fizetés>
+    <Vásárlás fiók="1" számítógép="301">
+        <Dátum>2023-11-18</Dátum>
+    </Vásárlás>
+    <Vásárlás fiók="2" számítógép="302">
+        <Dátum>2023-11-19</Dátum>
+    </Vásárlás>
+    <Vásárlás fiók="3" számítógép="303">
+        <Dátum>2023-11-20</Dátum>
+    </Vásárlás>
+    <Összeszerelés alkatrész="401" számítógép="301">
+        <Darab>2</Darab>
+    </Összeszerelés>
+    <Összeszerelés alkatrész="402" számítógép="302">
+        <Darab>1</Darab>
+    </Összeszerelés>
+    <Összeszerelés alkatrész="403" számítógép="303">
+        <Darab>3</Darab>
+    </Összeszerelés>
+</Számítógépbolt>
