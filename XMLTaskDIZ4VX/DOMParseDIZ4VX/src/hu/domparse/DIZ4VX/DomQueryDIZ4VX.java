@@ -1,9 +1,9 @@
 package hu.domparse.DIZ4VX;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 public class DomQueryDIZ4VX {
@@ -11,7 +11,7 @@ public class DomQueryDIZ4VX {
         try {
             // XML-dokumentum beolvasása
             File xmlFile = new File("XMLDIZ4VX.xml");
-            Document doc = DomReadDIZ4VX.parseXML(xmlFile);
+            Document doc = parseXML(xmlFile);
 
             // Példa lekérdezések
             System.out.println("Lekérdezések:");
@@ -58,5 +58,60 @@ public class DomQueryDIZ4VX {
 
         // Ha az azonosítót nem találjuk
         System.out.println("Azonosító nem található: " + identifierValue);
+    }
+    // Rekurzív módon kilistázza a dokumentum fastruktúráját
+    public static void listNodes(Node node, String indent) {
+        // Nyitó címke kiírása attribútumokkal
+        System.out.print(indent + "<" + node.getNodeName());
+
+        NamedNodeMap attributes = node.getAttributes();
+        for (int i = 0; i < attributes.getLength(); i++) {
+            Node attribute = attributes.item(i);
+            System.out.print(" " + attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
+        }
+
+        // Szöveges tartalom kiírása, ha van
+        if (node.hasChildNodes()) {
+            NodeList childNodes = node.getChildNodes();
+
+            // Ellenőrizze, hogy a gyermek elemek között van-e ELEMENT_NODE
+            boolean hasElementChild = false;
+            for (int i = 0; i < childNodes.getLength(); i++) {
+                if (childNodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
+                    hasElementChild = true;
+                    break;
+                }
+            }
+
+            if (hasElementChild) {
+                System.out.println(">");
+                // Rekurzív hívás a gyermek elemekre
+                for (int i = 0; i < childNodes.getLength(); i++) {
+                    Node childNode = childNodes.item(i);
+
+                    if (childNode.getNodeType() == Node.ELEMENT_NODE) {
+                        listNodes(childNode, indent + "  ");
+                    }
+                }
+                System.out.println(indent + "</" + node.getNodeName() + ">");
+            } else {
+                // Ha nincs más gyermek elem, akkor kiírja a szöveget és a záró címkét
+                String text = node.getTextContent().trim();
+                if (!text.isEmpty()) {
+                    System.out.println(">" + text + "</" + node.getNodeName() + ">");
+                } else {
+                    System.out.println("/>");
+                }
+            }
+        } else {
+            // Ha nincs gyermek eleme, záró címke zárással fejezzük be
+            System.out.println("/>");
+        }
+    }
+    // XML dokumentum beolvasása
+    public static Document parseXML(File file) throws Exception {
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        return dBuilder.parse(file);
     }
 }
