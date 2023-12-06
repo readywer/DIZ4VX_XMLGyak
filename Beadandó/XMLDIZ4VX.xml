@@ -32,7 +32,6 @@
             <Utca_házszám>Main Street 123</Utca_házszám>
         </Cím>
         <Telefonszám>+36 30 123 4567</Telefonszám>
-		<Telefonszám>+36 30 123 4569</Telefonszám>
     </Vásárló>
 
     <!-- Második Vásárló -->
@@ -44,7 +43,6 @@
             <Utca_házszám>Second Street 456</Utca_házszám>
         </Cím>
         <Telefonszám>+36 30 987 6543</Telefonszám>
-		<Telefonszám>+36 30 987 6545</Telefonszám>
     </Vásárló>
 
     <!-- Harmadik Vásárló -->
@@ -56,7 +54,6 @@
             <Utca_házszám>Third Street 789</Utca_házszám>
         </Cím>
         <Telefonszám>+36 30 555 1234</Telefonszám>
-		<Telefonszám>+36 30 555 1235</Telefonszám>
     </Vásárló>
 
     <!-- Első Bankkártya -->
