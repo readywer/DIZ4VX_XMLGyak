@@ -19,7 +19,7 @@
                 
         <Felhasználónév>user2</Felhasználónév>
                 
-        <Jelszó>newPassword2</Jelszó>
+        <Jelszó>password2</Jelszó>
                 
         <Kedvezmény>15</Kedvezmény>
             
@@ -31,7 +31,7 @@
                 
         <Felhasználónév>user3</Felhasználónév>
                 
-        <Jelszó>newPassword3</Jelszó>
+        <Jelszó>password3</Jelszó>
                 
         <Kedvezmény>20</Kedvezmény>
             
@@ -54,6 +54,8 @@
         </Cím>
                 
         <Telefonszám>+36 30 123 4567</Telefonszám>
+                
+        <Telefonszám>+36 30 123 4568</Telefonszám>
             
     </Vásárló>
         
@@ -94,6 +96,10 @@
         </Cím>
                 
         <Telefonszám>+36 30 555 1234</Telefonszám>
+                
+        <Telefonszám>+36 30 555 1235</Telefonszám>
+                
+        <Telefonszám>+36 30 555 1236</Telefonszám>
             
     </Vásárló>
         
@@ -105,7 +111,7 @@
                 
         <Kártyaszám>1234-5678-9012-3456</Kártyaszám>
                 
-        <Lejárati_dátum>2025-12-31</Lejárati_dátum>
+        <Lejárati_dátum>2028-10-20</Lejárati_dátum>
             
     </Bankkártya>
         
@@ -151,9 +157,9 @@
                 
         <Név>Office PC</Név>
                 
-        <Ár>800</Ár>
+        <Ár>50000</Ár>
                 
-        <Darab>50</Darab>
+        <Darab>1</Darab>
             
     </Számítógép>
         
@@ -175,7 +181,7 @@
                 
         <Név>RAM modul</Név>
                 
-        <Ár>100</Ár>
+        <Ár>11500</Ár>
                 
         <Tipus>DDR4</Tipus>
             

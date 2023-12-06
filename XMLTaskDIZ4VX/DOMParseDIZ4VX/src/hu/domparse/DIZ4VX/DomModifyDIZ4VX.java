@@ -21,12 +21,12 @@ public class DomModifyDIZ4VX {
             File xmlFile = new File("XMLDIZ4VX.xml");
             Document doc = parseXML(xmlFile);
 
-            // Példa: Adatmódosítás (jelszó megváltoztatása)
+            // Példa: Adatmódosítás
             modifyData(doc, "Fiók", "Felhasználónév", "user1", "Jelszó", "newPassword1");
-            modifyData(doc, "Fiók", "Felhasználónév", "user2", "Jelszó", "newPassword2");
-            modifyData(doc, "Fiók", "Felhasználónév", "user3", "Jelszó", "newPassword3");
+            modifyData(doc, "Bankkártya", "Kártyaszám", "1234-5678-9012-3456", "Lejárati_dátum", "2028-10-20");
+            modifyData(doc, "Alkatrész", "Név", "RAM modul", "Ár", "11500");
             modifyData(doc, "Számítógép", "Név", "Developer PC", "Darab", "5");
-            modifyData(doc, "Számítógép", "Név", "Office PC", "Darab", "50");
+            modifyData(doc, "Számítógép", "Név", "Office PC", "Ár", "50000");
 
             // Módosított dokumentum kiírása a konzolra
             System.out.println("Módosított dokumentum:");

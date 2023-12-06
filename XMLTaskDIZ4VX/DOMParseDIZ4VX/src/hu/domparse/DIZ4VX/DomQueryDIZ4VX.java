@@ -17,15 +17,15 @@ public class DomQueryDIZ4VX {
             System.out.println("Lekérdezések:");
 
             // Lekérdezés 1:
-            queryData(doc, "Vásárló", "VID", "101", "Név");
+            queryData(doc, "Vásárló", "VID", "101");
             // Lekérdezés 2:
-            queryData(doc, "Vásárló", "VID", "102", "Cím");
+            queryData(doc, "Vásárló", "VID", "102");
             // Lekérdezés 3:
-            queryData(doc, "Számítógép", "SZID", "303", "Ár");
+            queryData(doc, "Számítógép", "SZID", "303");
             // Lekérdezés 4:
-            queryData(doc, "Számítógép", "SZID", "302", "Darab");
+            queryData(doc, "Számítógép", "SZID", "302");
             // Lekérdezés 5:
-            queryData(doc, "Fiók", "FID", "3", "Felhasználónév");
+            queryData(doc, "Fiók", "FID", "3");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -33,8 +33,7 @@ public class DomQueryDIZ4VX {
     }
 
     // Általános adatlekérdező metódus
-    private static void queryData(Document doc, String tableName, String identifierAttribute, String identifierValue,
-                                  String fieldToQuery) {
+    private static void queryData(Document doc, String tableName, String identifierAttribute, String identifierValue) {
         NodeList nodeList = doc.getElementsByTagName(tableName);
         for (int i = 0; i < nodeList.getLength(); i++) {
             Element element = (Element) nodeList.item(i);
@@ -43,15 +42,9 @@ public class DomQueryDIZ4VX {
             String currentIdentifier = element.getAttribute(identifierAttribute);
 
             if (currentIdentifier.equals(identifierValue)) {
-                // Ellenőrzés, hogy a fieldToQuery létezik
-                NodeList fieldNodes = element.getElementsByTagName(fieldToQuery);
-                if (fieldNodes.getLength() > 0) {
-                    // Adat lekérdezése
-                    String queryResult = fieldNodes.item(0).getTextContent();
-                    System.out.println("Lekérdezés eredménye: " + currentIdentifier + ", " + fieldToQuery + ": " + queryResult);
-                } else {
-                    System.out.println("A mező nem található: " + fieldToQuery);
-                }
+                // Az összes adat kiírása az adott elemhez
+                System.out.println("Lekérdezés eredménye:");
+                listNodes(element, "  ");
                 return; // Kilépés, ha a lekérdezés megtörtént
             }
         }
@@ -59,6 +52,7 @@ public class DomQueryDIZ4VX {
         // Ha az azonosítót nem találjuk
         System.out.println("Azonosító nem található: " + identifierValue);
     }
+
     // Rekurzív módon kilistázza a dokumentum fastruktúráját
     public static void listNodes(Node node, String indent) {
         // Nyitó címke kiírása attribútumokkal
@@ -108,6 +102,7 @@ public class DomQueryDIZ4VX {
             System.out.println("/>");
         }
     }
+
     // XML dokumentum beolvasása
     public static Document parseXML(File file) throws Exception {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
