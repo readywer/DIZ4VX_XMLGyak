@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Beolvasás és Kiírás</title>
+</head>
+<body>
+  <script>
+    // Fájlnév, amelyet beolvasunk
+    const fileName = 'DIZ4VX_orarend.json';
+
+    // Fetch API használata
+    fetch(fileName)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Hiba a fájl beolvasása közben. Státuszkód: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(jsonData => {
+        const orarend = jsonData.DIZ4VX_orarend;
+        const orak = orarend.ora;
+
+        // Kiírás
+        for (const ora of orak) {
+          document.body.innerHTML += `<p>Tárgy: ${ora.targy}</p>`;
+          document.body.innerHTML += `<p>Időpont: ${ora.idopont.nap} ${ora.idopont.tol}-${ora.idopont.ig}</p>`;
+          document.body.innerHTML += `<p>Helyszín: ${ora.helyszin}</p>`;
+          document.body.innerHTML += `<p>Oktató: ${ora.oktato}</p>`;
+          document.body.innerHTML += `<p>Szak: ${ora.szak}</p>`;
+          document.body.innerHTML += '<br>';
+        }
+      })
+      .catch(error => {
+        console.error(`Hiba a fájl beolvasása közben: ${error.message}`);
+      });
+  </script>
+</body>
+</html>
